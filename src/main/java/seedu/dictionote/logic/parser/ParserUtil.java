@@ -9,7 +9,6 @@ import java.util.Set;
 import seedu.dictionote.commons.core.index.Index;
 import seedu.dictionote.commons.util.StringUtil;
 import seedu.dictionote.logic.parser.exceptions.ParseException;
-import seedu.dictionote.model.person.Address;
 import seedu.dictionote.model.person.Email;
 import seedu.dictionote.model.person.Name;
 import seedu.dictionote.model.person.Phone;
@@ -63,21 +62,6 @@ public class ParserUtil {
             throw new ParseException(Phone.MESSAGE_CONSTRAINTS);
         }
         return new Phone(trimmedPhone);
-    }
-
-    /**
-     * Parses a {@code String dictionote} into an {@code Address}.
-     * Leading and trailing whitespaces will be trimmed.
-     *
-     * @throws ParseException if the given {@code dictionote} is invalid.
-     */
-    public static Address parseAddress(String address) throws ParseException {
-        requireNonNull(address);
-        String trimmedAddress = address.trim();
-        if (!Address.isValidAddress(trimmedAddress)) {
-            throw new ParseException(Address.MESSAGE_CONSTRAINTS);
-        }
-        return new Address(trimmedAddress);
     }
 
     /**
