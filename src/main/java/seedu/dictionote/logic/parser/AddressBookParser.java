@@ -6,15 +6,7 @@ import static seedu.dictionote.commons.core.Messages.MESSAGE_UNKNOWN_COMMAND;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import seedu.dictionote.logic.commands.AddCommand;
-import seedu.dictionote.logic.commands.ClearCommand;
-import seedu.dictionote.logic.commands.Command;
-import seedu.dictionote.logic.commands.DeleteCommand;
-import seedu.dictionote.logic.commands.EditCommand;
-import seedu.dictionote.logic.commands.ExitCommand;
-import seedu.dictionote.logic.commands.FindCommand;
-import seedu.dictionote.logic.commands.HelpCommand;
-import seedu.dictionote.logic.commands.ListCommand;
+import seedu.dictionote.logic.commands.*;
 import seedu.dictionote.logic.parser.exceptions.ParseException;
 
 /**
@@ -67,6 +59,9 @@ public class AddressBookParser {
 
         case HelpCommand.COMMAND_WORD:
             return new HelpCommand();
+
+        case RemarkCommand.COMMAND_WORD:
+            return new RemarkCommandParser().parse(arguments);
 
         default:
             throw new ParseException(MESSAGE_UNKNOWN_COMMAND);

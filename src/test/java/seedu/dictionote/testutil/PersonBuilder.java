@@ -3,11 +3,7 @@ package seedu.dictionote.testutil;
 import java.util.HashSet;
 import java.util.Set;
 
-import seedu.dictionote.model.person.Address;
-import seedu.dictionote.model.person.Email;
-import seedu.dictionote.model.person.Name;
-import seedu.dictionote.model.person.Person;
-import seedu.dictionote.model.person.Phone;
+import seedu.dictionote.model.person.*;
 import seedu.dictionote.model.tag.Tag;
 import seedu.dictionote.model.util.SampleDataUtil;
 
@@ -20,11 +16,13 @@ public class PersonBuilder {
     public static final String DEFAULT_PHONE = "85355255";
     public static final String DEFAULT_EMAIL = "amy@gmail.com";
     public static final String DEFAULT_ADDRESS = "123, Jurong West Ave 6, #08-111";
+    public static final String DEFAULT_REMARK = "This is Amy.";
 
     private Name name;
     private Phone phone;
     private Email email;
     private Address address;
+    private Remark remark;
     private Set<Tag> tags;
 
     /**
@@ -89,8 +87,13 @@ public class PersonBuilder {
         return this;
     }
 
+    public PersonBuilder withRemark(String remark) {
+        this.remark = new Remark(remark);
+        return this;
+    }
+
     public Person build() {
-        return new Person(name, phone, email, address, tags);
+        return new Person(name, phone, email, address, remark, tags);
     }
 
 }

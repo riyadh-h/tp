@@ -1,22 +1,14 @@
 package seedu.dictionote.logic.parser;
 
 import static seedu.dictionote.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
-import static seedu.dictionote.logic.parser.CliSyntax.PREFIX_ADDRESS;
-import static seedu.dictionote.logic.parser.CliSyntax.PREFIX_EMAIL;
-import static seedu.dictionote.logic.parser.CliSyntax.PREFIX_NAME;
-import static seedu.dictionote.logic.parser.CliSyntax.PREFIX_PHONE;
-import static seedu.dictionote.logic.parser.CliSyntax.PREFIX_TAG;
+import static seedu.dictionote.logic.parser.CliSyntax.*;
 
 import java.util.Set;
 import java.util.stream.Stream;
 
 import seedu.dictionote.logic.commands.AddCommand;
 import seedu.dictionote.logic.parser.exceptions.ParseException;
-import seedu.dictionote.model.person.Address;
-import seedu.dictionote.model.person.Email;
-import seedu.dictionote.model.person.Name;
-import seedu.dictionote.model.person.Person;
-import seedu.dictionote.model.person.Phone;
+import seedu.dictionote.model.person.*;
 import seedu.dictionote.model.tag.Tag;
 
 /**
@@ -42,9 +34,10 @@ public class AddCommandParser implements Parser<AddCommand> {
         Phone phone = ParserUtil.parsePhone(argMultimap.getValue(PREFIX_PHONE).get());
         Email email = ParserUtil.parseEmail(argMultimap.getValue(PREFIX_EMAIL).get());
         Address address = ParserUtil.parseAddress(argMultimap.getValue(PREFIX_ADDRESS).get());
+        Remark remark = ParserUtil.parseRemark(argMultimap.getValue(PREFIX_REMARK).get());
         Set<Tag> tagList = ParserUtil.parseTags(argMultimap.getAllValues(PREFIX_TAG));
 
-        Person person = new Person(name, phone, email, address, tagList);
+        Person person = new Person(name, phone, email, address, remark, tagList);
 
         return new AddCommand(person);
     }
