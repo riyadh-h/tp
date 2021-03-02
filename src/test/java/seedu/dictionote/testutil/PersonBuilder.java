@@ -3,7 +3,12 @@ package seedu.dictionote.testutil;
 import java.util.HashSet;
 import java.util.Set;
 
-import seedu.dictionote.model.person.*;
+import seedu.dictionote.model.person.Address;
+import seedu.dictionote.model.person.Email;
+import seedu.dictionote.model.person.Name;
+import seedu.dictionote.model.person.Person;
+import seedu.dictionote.model.person.Phone;
+import seedu.dictionote.model.person.Remark;
 import seedu.dictionote.model.tag.Tag;
 import seedu.dictionote.model.util.SampleDataUtil;
 

@@ -1,14 +1,24 @@
 package seedu.dictionote.logic.parser;
 
 import static seedu.dictionote.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
-import static seedu.dictionote.logic.parser.CliSyntax.*;
+import static seedu.dictionote.logic.parser.CliSyntax.PREFIX_ADDRESS;
+import static seedu.dictionote.logic.parser.CliSyntax.PREFIX_EMAIL;
+import static seedu.dictionote.logic.parser.CliSyntax.PREFIX_NAME;
+import static seedu.dictionote.logic.parser.CliSyntax.PREFIX_PHONE;
+import static seedu.dictionote.logic.parser.CliSyntax.PREFIX_REMARK;
+import static seedu.dictionote.logic.parser.CliSyntax.PREFIX_TAG;
 
 import java.util.Set;
 import java.util.stream.Stream;
 
 import seedu.dictionote.logic.commands.AddCommand;
 import seedu.dictionote.logic.parser.exceptions.ParseException;
-import seedu.dictionote.model.person.*;
+import seedu.dictionote.model.person.Address;
+import seedu.dictionote.model.person.Email;
+import seedu.dictionote.model.person.Name;
+import seedu.dictionote.model.person.Person;
+import seedu.dictionote.model.person.Phone;
+import seedu.dictionote.model.person.Remark;
 import seedu.dictionote.model.tag.Tag;
 
 /**

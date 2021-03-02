@@ -9,7 +9,11 @@ import java.util.Set;
 import seedu.dictionote.commons.core.index.Index;
 import seedu.dictionote.commons.util.StringUtil;
 import seedu.dictionote.logic.parser.exceptions.ParseException;
-import seedu.dictionote.model.person.*;
+import seedu.dictionote.model.person.Address;
+import seedu.dictionote.model.person.Email;
+import seedu.dictionote.model.person.Name;
+import seedu.dictionote.model.person.Phone;
+import seedu.dictionote.model.person.Remark;
 import seedu.dictionote.model.tag.Tag;
 
 /**
